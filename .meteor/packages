@@ -8,9 +8,12 @@ meteor-platform
 autopublish
 insecure
 priezz:accounts-evernote
-priezz:evernote
 accounts-base
 accounts-ui
 mquandalle:jade
 coffeescript
 fourseven:scss
+priezz:evernote
+service-configuration
+meteor-developer
+accounts-password
