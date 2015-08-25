@@ -1,0 +1,98 @@
+head
+  title Scout
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+  script(src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js")
+
+body
+  +navbar
+  .row.index
+    .col-md-3
+      +sidebar
+    .col-md-8
+      .row
+        .col-md-12
+          +intro
+      .row
+        .col-md-12
+          +subscribeForm
+      .row
+        .col-md-12
+          +post
+  .row
+    .col-md-12
+      +footer
+
+template(name="navbar")
+  nav.navbar.navbar-light.bg-faded
+    a.navbar-brand(href='#') Navbar
+    ul.nav.navbar-nav
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Home
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='#') Features
+      li.nav-item
+        a.nav-link(href='#') Pricing
+      li.nav-item
+        a.nav-link(href='#') About
+    form.form-inline.navbar-form.pull-right
+      input.form-control(type='text', placeholder='Search')
+      button.btn.btn-success-outline(type='submit') Search
+
+template(name="navbarCollapse")
+  #exCollapsingNavbar.collapse
+  .bg-inverse.p-a
+    h4 Collapsed content
+    span.text-muted Toggleable via the navbar brand.
+  nav.navbar.navbar-light.bg-faded
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#exCollapsingNavbar')
+    | ☰
+
+
+template(name="sidebar")
+  .sidebar
+    ul.nav
+      li.nav-item
+        a.nav-link(href='#') Link
+      li.nav-item
+        a.nav-link(href='#') Link
+      li.nav-item
+        a.nav-link(href='#') Another link
+      li.nav-item
+        a.nav-link.disabled(href='#') Disabled
+
+template(name="intro")
+  .intro
+    h1.display-1 Hello
+    p.lead Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.
+
+template(name="subscribeForm")
+  .subscribeForm
+    form
+      .col-lg-6
+        .input-group
+          input.form-control.form-control-lg(type='text', placeholder='Your email bro')
+          span.input-group-btn
+            button.btn.btn-lg.btn-success(type='button') Subscribe
+
+
+template(name="post")
+  .post
+    .row
+      .col-sm-6
+        .card.card-block
+          h3.card-title Special title treatment
+          p.card-text With supporting text below as a natural lead-in to additional content.
+          a.btn.btn-sm.btn-primary-outline(href='#') Go somewhere
+      .col-sm-6
+        .card.card-block
+          h3.card-title Special title treatment
+          p.card-text With supporting text below as a natural lead-in to additional content.
+          a.btn.btn-sm.btn-primary-outline(href='#') Go somewhere
+
+template(name="footer")
+  .footer
+    Copyright © 2015 The Birkett
